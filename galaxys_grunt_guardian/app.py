@@ -36,15 +36,31 @@ def login():
     return render_template('login.html')
 
 
-@app.route('/logout', methods=['GET', 'POST'])
+@app.route('/logout', methods=['GET'])
 def logout():
     # Clear the "logged_in" cookie to log the user out
-    if request.method == 'POST':
-        pass
-    elif request.cookies.get('logged_in') == 'yes':
+    if request.cookies.get('logged_in') == 'yes':
         response = make_response(render_template('logout.html'))
         response.set_cookie('logged_in', '', expires=0)  # Set the cookie to expire immediately
         return response
+    
+@app.route('/signup', methods=['POST'])
+def signup():
+
+    if request.method == 'POST':
+        email = request.form.get('signup_email')
+        username = request.form.get('signup_username')
+        password = request.form.get('signup_password')
+
+        if username not in users and users[username] == password:
+            # Set a cookie to indicate that the user is logged in
+            response = make_response(render_template('success_login.html'))    
+            response.set_cookie('logged_in', 'yes')
+            return response
+        else:
+            return 'Login failed. Please check your username and password.'
+
+
 
 # Run the application if this script is executed
 if __name__ == '__main__':

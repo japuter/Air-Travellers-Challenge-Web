@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  
+}
+
+.main-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(43, 181, 240, 0.15);
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.menu-option {
+    width: 600px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.menu-link {
+    width: 600px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-size: cover;
+    text-align: center;
+    
+}
+
+.menu-option.new-game {
+    background-image: url('../static/images/new-game.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.menu-option.load-game {
+    background-image: url('../static/images/load-game.png');
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.menu-option.options {
+    background-image: url('../static/images/options.png');
+}
+
+.menu-option.exit {
+    background-image: url('../static/images/exit.png');
+}

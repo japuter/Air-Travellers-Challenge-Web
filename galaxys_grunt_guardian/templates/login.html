@@ -4,22 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../static/main_styles.css" />
+    <link rel="stylesheet" href="../static/login.css" />
     <title>Login</title>
   </head>
   <body>
     <main class="login-container">
-      <article class="login-wrapper">
-        <h2>Login</h2>
-        <form action="/login" method="POST">
-          <label for="username">Username:</label>
-          <input type="text" id="username" name="username" required /><br />
+      <article class="signup-wrapper" style="display: none;">
+        <form action="/signup" method="POST" class="login-form">
+          <div class="form-content">
+            <h1>Sign up</h1>
 
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required /><br />
+            <label for="email">Email</label>
+            <input type="text" id="signup_email" name="signup_email" required />
 
-          <input type="submit" value="Login" />
+            <label for="signup_username">Username:</label>
+            <input type="text" id="signup_username" name="signup_username" required />
+
+            <label for="signup_password">Password:</label>
+            <input type="password" id="signup_password" name="signup_password" required />
+        
+            <button type="submit">Sign up</button>
+          </div>
         </form>
       </article>
+      <article>
+        <form action="/login" method="POST" class="login-form">
+          <div class="form-content">
+            <h1>Log in</h1>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+        
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+        
+            <button type="submit">Login</button>
+            <!-- SHOW SIGNUP WRAPPER WHEN CLICKING BUTTON AND HIDE BOTTOM SIGNUP BUTTON -->
+            <button type="button" onclick="document.querySelector('.signup-wrapper').style.display = 'block'; this.style.display = 'none'; ">SIGN UP</button>
+          </div>
+        </form>
+      </article>
+      <article></article>
     </main>
   </body>
 </html>
