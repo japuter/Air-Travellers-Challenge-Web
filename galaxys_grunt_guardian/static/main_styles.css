@@ -1,0 +1,25 @@
+body {
+    background-image: url('./images/1920x1080_bg.png');
+    background-size: cover;
+}
+
+/* Media query for wide screens (greater than 1200px wide) */
+@media (min-width: 1200px) {
+    body {
+        background-image: url('./images/3440x1440_bg.png');
+    }
+}
+
+/* Media query for medium-sized screens (between 768px and 1199px wide) */
+@media (min-width: 768px) and (max-width: 1199px) {
+    body {
+        background-image: url('./images/1024 _bg.png');
+    }
+}
+
+/* Media query for small screens (less than 768px wide) */
+@media (max-width: 767px) {
+    body {
+        background-image: url('./images/768_bg.png');
+    }
+}

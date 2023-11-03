@@ -8,7 +8,7 @@ def connect_to_database():
             port=3306,
             user="root",
             password="root",
-            database="flight_game",
+            database="ggg",
             autocommit=True
         )
         print(f'{color_red}Connected to database Air Travellers Challenge{color_end}')
