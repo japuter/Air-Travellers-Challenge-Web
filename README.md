@@ -44,43 +44,21 @@ The primary objective of "Galaxy's Grunt Guardian" is to defend each planet from
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-If you want to create a 3D planet hopping game using JavaScript and Three.js, you can still follow a modular approach to separate the game logic into its own section or module. Here's how you can do it:
+If you want to create a 3D planet hopping game using JavaScript, you can still follow a modular approach to separate the game logic into its own section or module. Here's how you can do it:
 
 1. **Create a New JavaScript File for Planet Hopping:**
    - Start by creating a new JavaScript file specifically for the planet hopping game logic (e.g., `planet-hopping.js`).
 
 2. **Define and Organize Game Logic:**
-   - In the `planet-hopping.js` file, define and organize the game logic related to 3D planet hopping. This includes functions, classes, variables, and event handlers for controlling spaceship movement, planet transitions, collision detection, and any other game-specific features.
+   - In the `planet-hopping.js` file, define and organize the game logic related to "3D" planet hopping. The 3D will be fufu meaning we will use 2D space and make it work 
 
-3. **Import Dependencies:**
-   - Import the necessary dependencies, including Three.js and any other libraries or modules you need for 3D graphics and game development.
-
-4. **Export Game Logic Functions and Classes:**
+3. **Export Game Logic Functions and Classes:**
    - Use the `export` keyword to export the relevant functions, classes, or objects that other parts of your application need to interact with. These exported elements should encapsulate the core gameplay mechanics.
 
-   ```javascript
-   // planet-hopping.js
-
-   // Import necessary dependencies
-   import * as THREE from 'three';
-
-   // Define functions, classes, and variables specific to the game
-   function initializePlanetHoppingGame() {
-       // ...
-   }
-
-   function startPlanetHopping() {
-       // ...
-   }
-
-   // Export functions and objects for external use
-   export { initializePlanetHoppingGame, startPlanetHopping };
-   ```
-
-5. **Separate HTML and CSS:**
+4. **Separate HTML and CSS:**
    - Keep any HTML elements and CSS styles related to the 3D planet hopping game in separate HTML and CSS files. This helps maintain a clean separation of concerns.
 
-6. **Import and Use the Module:**
+5. **Import and Use the Module:**
    - In your main JavaScript file (e.g., `main.js` or `app.js`), import the planet hopping module and use its exported functions or objects to initialize and control the game.
 
    ```javascript

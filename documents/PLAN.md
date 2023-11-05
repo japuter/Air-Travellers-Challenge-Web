@@ -1,12 +1,21 @@
+
+
 1. Conceptualize the Game Idea:
 
-Define the genre: Is it a strategy game, an arcade shooter, an adventure game?
-main genre = 
-sub genre = 
-Create a narrative: What's the story behind the game? Why are players defending planets or hopping between them?
-narrative =
-Determine the visual style: Will it be pixel art, vector graphics, or something else?
-visual style = planet defending of the game will be using vector graphics 
+main genre = Strategy
+sub genre = Tower Defense
+Narrative:
+- Articifial Intelligence suddenly went rogue and is trying to destroy every living thing in existence. You as a Grunt Guardian have to protect your galaxy from misery, by traveling to as many planets as you can and killing its minions.
+
+
+Visual style:
+    - Planet defending:
+        - Cannon & the enemies will be made using vector graphics 
+        - Planet background will be made by using our bro
+    
+    -Planet hopping:
+        - The background of the whole scene, will be a photo of space in PNG format
+        - Photos of each planet are in PNG form with transparent background
 
 
 2. Design the Game Mechanics:
@@ -17,6 +26,10 @@ defense of planet mechanics:
     - Rotating the cannon to shoot enemies
     - Powerup mechanics:
     If you receive a power up you can use it instantly by pressing space (maybe will implement inventory to store the powerups)
+    
+    Guardian/Cannon Mechanics:
+        - Guardian has a cannon
+        - Guardian has 3 lives each worth 100HP
 
     Powerups:
         - Double time = cannon will shoot twice as fast
@@ -43,33 +56,48 @@ defense of planet mechanics:
                             How will the player interact with the game? Think about controls and user input.
 
     Enemy mechanics:
-        - Different kinds of enemies depending on the type of the planet
-        - When you kill an enemy theres a chance that it drops a powerup
+        - Planet type will determine the enemies
+        - When killing an enemy theres a chance that it drops a powerup
 
     Planet mechanics:
+        - Each planet has a required XP to complete (which depend on the users level and what type the planet is)
+        - There will be 5 waves of enemies, each wave will increasingly more difficult
+        - When you complete a planet you receive 10HP back.
+
         - Different types of planets:
             Lava Planet:
                 Characteristics: Fiery environment with rivers of lava and volcanic eruptions.
                 Gameplay Element: Periodic eruptions could send waves of lava or fireballs across the play area, providing both obstacles and potential tools against enemies.
+                Required XP to complete: 
+                Unlock level: 10
             
             Ice Planet:
                 Characteristics: Frigid climate with ice structures and frequent snowfall.
                 Gameplay Element: Slippery terrain affecting movement, and icicle formations could be shot to fall on enemies.
-                
+                Required XP to complete: 
+                Unlock level: 3
+
             Jungle Planet:
                 Characteristics: Dense forests, vibrant flora, and teeming with wildlife.
                 Gameplay Element: Thick foliage could hide enemies or power-ups, and some areas could be inaccessible until cleared or traversed via treetops.
+                Required XP to complete: 
+                Unlock level: 5
             
             Desert Planet:
                 Characteristics: Sandy dunes, scarce water sources, and ancient ruins.
                 Gameplay Element: Sandstorms could temporarily limit visibility and slow down movement, while quicksand pits could trap enemies.
+                Required XP to complete:
+                Unlock level: 1 
 
             Ocean Planet:
                 Characteristics: Mostly water-covered with small islands and underwater cities.
                 Gameplay Element: Tides and currents could affect projectile trajectories, and players might need to defend both above and below the water surface.
+                Required XP to complete: 
+                Unlock level: 2
+
+    
 
 What are the rules of the game, and how does a player win or lose?
-
 Rules: 
     -The game will last as long as the guarding has hp
     -The game end when the guarding loses all lives:
