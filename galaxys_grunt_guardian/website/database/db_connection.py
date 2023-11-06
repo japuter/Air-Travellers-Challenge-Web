@@ -1,5 +1,4 @@
 import mysql.connector
-from colors import *
 # DATABASE CONNECTION
 def connect_to_database():
     try:
@@ -11,7 +10,7 @@ def connect_to_database():
             database="ggg",
             autocommit=True
         )
-        print(f'{color_red}Connected to database Air Travellers Challenge{color_end}')
+        print(f'Connected to database ggg')
         return connection
     except mysql.connector.Error as err:
         print(f"Error: {err}")

@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LOGGED IN</title>
-  </head>
-  <body>
+{% extends "base.html" %} {% block title %}Logged in{% endblock %}
+
+{% block content %}
     <main>
       <article>
-        <h2>SUCCESSFULLY LOGGED IN</h2>
+        <h2 style=" color: lightskyblue;">SUCCESSFULLY LOGGED IN AS <p style="color: black;">{{user}}</p></h2>
         <script>
           window.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => {
@@ -18,5 +13,5 @@
         </script>
       </article>
     </main>
-  </body>
-</html>
+{% endblock %}
+

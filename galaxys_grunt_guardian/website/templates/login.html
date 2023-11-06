@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/main_styles.css" />
-    <link rel="stylesheet" href="../static/login.css" />
-    <title>Login</title>
-  </head>
-  <body>
+{% extends "base.html" %} {% block title %}Login{% endblock %}
+
+{% block content %}
     <main class="login-container">
       <article class="signup-wrapper" style="display: none;">
         <form action="/signup" method="POST" class="login-form">
@@ -46,5 +39,4 @@
       </article>
       <article></article>
     </main>
-  </body>
-</html>
+  {% endblock %}

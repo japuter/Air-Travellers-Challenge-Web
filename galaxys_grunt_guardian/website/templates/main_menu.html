@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block title %}Main menu{% endblock %}
+
+{% block content %}
+    
+<main class="main-menu">
+    <a class="menu-link" href="/new-game">
+        <div class="menu-option new-game"></div>
+    </a>
+    <a class="menu-link" href="/load-game">
+        <div class="menu-option load-game"></div>
+    </a>
+    <a class="menu-link" href="/options">
+        <div class="menu-option options"></div>
+    </a>
+    <a class="menu-link" href="/exit">
+        <div class="menu-option exit"></div>
+    </a>
+</main>
+
+{% endblock %}
