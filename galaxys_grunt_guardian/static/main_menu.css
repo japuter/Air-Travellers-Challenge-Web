@@ -1,8 +1,9 @@
 body {
     margin: 0;
     padding: 0;
+    padding-left: 10%;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     height: 100vh;  
 }
@@ -44,22 +45,22 @@ body {
 }
 
 .menu-option.new-game {
-    background-image: url('../static/images/new-game.png');
+    background-image: url('../static/images/misc/new-game.png');
     background-repeat: no-repeat;
     background-size: contain;
 }
 
 .menu-option.load-game {
-    background-image: url('../static/images/load-game.png');
+    background-image: url('../static/images/misc/load-game.png');
     background-size: 90%;
     background-repeat: no-repeat;
     background-size: contain;
 }
 
 .menu-option.options {
-    background-image: url('../static/images/options.png');
+    background-image: url('../static/images/misc/options.png');
 }
 
 .menu-option.exit {
-    background-image: url('../static/images/exit.png');
+    background-image: url('../static/images/misc/exit.png');
 }

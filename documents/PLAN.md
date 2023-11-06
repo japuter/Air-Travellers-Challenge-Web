@@ -104,8 +104,6 @@ Rules:
         - 3 lives each is 100hp
         - each enemy that reaches the guardian ddoes damage to it (different enemies do different damage)
 
-
-
 3. Plan the Game Structure:
 
 Outline the game's levels or stages.
@@ -113,20 +111,4 @@ Decide on the progression system - how does the game advance from one level to t
 Sketch out the main interface elements, like menus, score displays, and inventory systems if applicable.
 4. Develop Technical Specifications:
 
-Choose a game development platform or engine, like Unity, Unreal Engine, Godot, etc.
-Determine the server-side requirements if your game has an online component. Will you need databases, user authentication, etc.?
-5. Create a Prototype:
-
-Start with a simple prototype that includes the most basic version of your game.
-Use placeholders for graphics and sounds to test mechanics and gameplay flow.
-Iteratively design and test each game component (e.g., the guardian/cannon system, planet details).
-6. Test and Iterate:
-
-Playtest the prototype and gather feedback.
-Refine and adjust game elements based on the feedback.
-Implement additional features like graphics, sound, and more complex levels after the basic gameplay is fun and engaging.
-7. Plan the Development Phases:
-
-Break the project into manageable phases.
-Create a timeline for your project, allocating time for design, development, testing, and deployment.
-Consider the scope of your game - keep it doable within your timeframe and resources.
+The game will work on a website browser

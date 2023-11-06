@@ -1,5 +1,6 @@
 import time
 from flask import Flask, request, render_template, redirect, url_for, make_response
+from database.db_models import verify_user
 
 # Create a Flask web application
 app = Flask(__name__, static_url_path='/static', static_folder='static')
@@ -12,7 +13,10 @@ users = {
 # Define a route and a function to handle requests to the root URL
 @app.route('/')
 def index():
-    return render_template('index.html')
+    if request.cookies.get('logged_in') == 'yes':
+        return render_template('index.html') #IF USER HAS LOGIN COOKIES, LOAD MAIN MENU PAGE
+    else:
+        return redirect(url_for('login')) # IF USER HAS NO LOGIN COOKIES REDIRECT TO LOGIN PAGE
 
 # ROUTE LOGIN
 @app.route('/login', methods=['GET', 'POST'])
@@ -24,16 +28,17 @@ def login():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
+        logged_in = verify_user(username, password)
 
-        if username in users and users[username] == password:
+        if logged_in:
             # Set a cookie to indicate that the user is logged in
             response = make_response(render_template('success_login.html'))    
             response.set_cookie('logged_in', 'yes')
             return response
         else:
             return 'Login failed. Please check your username and password.'
-
-    return render_template('login.html')
+    else:
+        return render_template('login.html')
 
 
 @app.route('/logout', methods=['GET'])
@@ -59,6 +64,10 @@ def signup():
             return response
         else:
             return 'Login failed. Please check your username and password.'
+
+@app.route('/new-game', methods=['GET'])
+def new_game():
+    pass
 
 
 
