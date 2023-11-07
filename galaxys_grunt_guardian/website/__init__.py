@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
+import logging
 
 db = SQLAlchemy()
 DB_NAME = "ggg.db"
@@ -20,7 +21,8 @@ def create_app():
     app.register_blueprint(auth, url_prefix='/')
     app.register_blueprint(games, url_prefix='/game/')
 
-    from .models import Planet, Player, Game
+    # from .models import Planet, Player, Game
+    from .models import Player
 
     create_database(app)
 
@@ -29,5 +31,10 @@ def create_app():
 def create_database(app):
     if not path.exists('./' + DB_NAME):
         with app.app_context():
-            db.create_all()
-            print('Created database!')
+            try:
+                db.create_all()
+                print('Created database!')
+            except Exception as e:
+                logging.exception('An error occurred when creating database!')
+
+                print('An error occurred when creating database!', e)
