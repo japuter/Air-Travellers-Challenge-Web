@@ -2,6 +2,7 @@ from . import db
 from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, Enum, Text
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, sessionmaker
+from os import path
 
 Base = declarative_base()
 
@@ -26,7 +27,7 @@ class Player(Base):
     # location_id = Column(Integer, ForeignKey('planets.id'))
     
     # Define the relationship, this will add a 'players' attribute to the Planet class
-    location = relationship("Planet", backref="players")
+    # location = relationship("Planet", backref="players")
 
 class Game(Base):
     __tablename__ = 'game'
@@ -36,17 +37,18 @@ class Game(Base):
     level = Column(Integer, nullable=False)
     xp = Column(Integer, nullable=False, default=0)
     health = Column(Integer, nullable=False)
-    player_id = Column(Integer, ForeignKey('players.id'))
+    # player_id = Column(Integer, ForeignKey('players.id'))
 
     # Define the relationship, this will add a 'game' attribute to the Player class
-    player = relationship("Player", backref="games")
+    # player = relationship("Player", backref="games")
 
 # Create an engine that stores data in the local directory's
 # sqlalchemy_example.db file.
-engine = create_engine('sqlite:///ggg.db')
-
+# if not path.exists('./ggg.db'):
+#     engine = create_engine('sqlite:///ggg.db')
+#     print('Created database ggg.db')
 # Create all tables in the engine. This is equivalent to "Create Table"
 # statements in raw SQL.
-Base.metadata.create_all(engine)
+    # Base.metadata.create_all(engine)
 
     

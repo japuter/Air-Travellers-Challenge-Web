@@ -44,7 +44,9 @@ def logout():
 @auth.route('/signup', methods=['POST'])
 def signup():
 
-    if request.method == 'POST':
+    if request.method == 'GET':
+        return redirect(url_for(auth.login))
+    elif request.method == 'POST':
         email = request.form.get('signup_email')
         username = request.form.get('signup_username')
         password = request.form.get('signup_password')
@@ -60,7 +62,7 @@ def signup():
             db.session.add(new_player)
             db.session.commit()
             flash('Account created', category='success')
-            response = make_response(render_template('main-menu.html'))    
+            response = make_response(render_template('success_login.html', user=username))    
             response.set_cookie('logged_in', 'yes')
             return response
             
