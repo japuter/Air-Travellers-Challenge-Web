@@ -17,17 +17,19 @@ def login():
         username =request.form.get('username')
         password = request.form.get('password')
 
-        #  QUERY FIRST EMAIL FROM DB
+        #  QUERY THE FIRST USER FROM DB BASED ON SUBMIT EMAIL
         user = Player.query.filter_by(email=email).first()
+        print(user.password)
         # IF A EMAIL FOR USER IS FOUND
         if user:
-            if check_password_hash(user.password):
-                response = make_response(render_template('success_login.html', user=username))    
+            if check_password_hash(user.password, password):
+                response = make_response(render_template('success_login.html', user=email))    
                 response.set_cookie('logged_in', 'yes')
+                return response
             else:
-                flash('Incorrect password, try again', category='error')
+                return render_template('failed_login.html', user=username, message='Incorrect password')
         else:
-            flash('Email does not exist', category='error')
+            return render_template('failed_login.html', user=username, message='Email does not exist')
 
     else:
         return render_template('login.html')
@@ -55,15 +57,14 @@ def signup():
         password = request.form.get('signup_password')
 
         user = Player.query.filter_by(email=email).first()
-
         if user:
-            flash('Email already exists.', category='error')
-        elif len(email) < 10:
-            flash('Email must be greater than 10 characters.', category='error')
-        elif len(username) < 2:
-            flash('Username must be greater than 2 characters.', category='error')
+            return redirect(url_for(auth.login))    
+        elif len(email) < 7:
+            return redirect(url_for(auth.login))    
+        elif len(username) < 3:
+            return redirect(url_for(auth.login))    
         elif len(password) < 5:
-            flash('Username must be greater than 5 characters.', category='error')
+            return redirect(url_for(auth.login))    
         else:
             new_player = Player(email=email, name=username, password=generate_password_hash(password, method='pbkdf2:sha256'))
             db.session.add(new_player)

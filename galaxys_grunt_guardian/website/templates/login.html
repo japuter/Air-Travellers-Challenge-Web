@@ -8,13 +8,13 @@
             <h1>Sign up</h1>
 
             <label for="email">Email</label>
-            <input type="text" id="signup_email" name="signup_email" required />
+            <input type="text" id="signup_email" name="signup_email" minlength="10" required />
 
             <label for="signup_username">Username:</label>
-            <input type="text" id="signup_username" name="signup_username" required />
+            <input type="text" id="signup_username" name="signup_username" minlength="3" required />
 
             <label for="signup_password">Password:</label>
-            <input type="password" id="signup_password" name="signup_password" required />
+            <input type="password" id="signup_password" name="signup_password" minlength="5" required />
         
             <button type="submit">Sign up</button>
           </div>
@@ -24,12 +24,10 @@
         <form action="/login" method="POST" class="login-form">
           <div class="form-content">
             <h1>Log in</h1>
-
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username">
-        
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" minlength="10"> 
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password">
+            <input type="password" id="password" name="password" minlength="5">
         
             <button type="submit">Login</button>
             <!-- SHOW SIGNUP WRAPPER WHEN CLICKING BUTTON AND HIDE BOTTOM SIGNUP BUTTON -->

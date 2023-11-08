@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block title %}Logged in{% endblock %}
+
+{% block content %}
+    <main>
+      <article>
+        <h2 style=" color: lightskyblue;">FAILED TO LOGIN, <p style="color: black;">{{message}}</p></h2>
+        <script>
+          window.addEventListener("DOMContentLoaded", () => {
+            setTimeout(() => {
+              window.location.href = "/";
+            }, 2500);
+          });
+        </script>
+      </article>
+    </main>
+{% endblock %}
+
