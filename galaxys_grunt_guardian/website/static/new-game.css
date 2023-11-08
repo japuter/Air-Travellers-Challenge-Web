@@ -1,0 +1,13 @@
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* ADD MEDIA SUPPORT AKA DIFFERENT SIZES ON DIFFERENT DEVICES */
+/* canvas {
+    background-color: beige; 
+    width: 30%;
+    height: 25%;
+} */

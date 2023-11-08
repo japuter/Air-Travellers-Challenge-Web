@@ -32,7 +32,7 @@
         
             <button type="submit">Login</button>
             <!-- SHOW SIGNUP WRAPPER WHEN CLICKING BUTTON AND HIDE BOTTOM SIGNUP BUTTON -->
-            <button type="button" onclick="document.querySelector('.signup-wrapper').style.display = 'block'; this.style.display = 'none'; ">SIGN UP</button>
+            <button type="button" onclick="document.querySelector('.signup-wrapper').style.display = 'block'; this.parentElement.style.display = 'none'; ">SIGN UP</button>
           </div>
         </form>
       </article>
