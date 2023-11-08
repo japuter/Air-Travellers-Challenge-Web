@@ -1,0 +1,9 @@
+{% extends "base.html" %} {% block title %}New game{% endblock %}
+
+{% block content %}
+    <h2 style="color: white; background-color: black; width: 25%;">Created new game for {{user}}</h2>
+    <article class="game-container">
+        <canvas height="800" width="600" style="border: 1px solid black;"></canvas>
+    </article>
+
+{% endblock %}

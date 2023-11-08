@@ -19,17 +19,18 @@ def login():
 
         #  QUERY THE FIRST USER FROM DB BASED ON SUBMIT EMAIL
         user = Player.query.filter_by(email=email).first()
-        print(user.password)
+    
         # IF A EMAIL FOR USER IS FOUND
         if user:
             if check_password_hash(user.password, password):
                 response = make_response(render_template('success_login.html', user=email))    
                 response.set_cookie('logged_in', 'yes')
+                response.set_cookie('username', user.name)
                 return response
             else:
-                return render_template('failed_login.html', user=username, message='Incorrect password')
+                return render_template('fail_login.html', user=username, message='Incorrect password')
         else:
-            return render_template('failed_login.html', user=username, message='Email does not exist')
+            return render_template('fail_login.html', user=username, message='Email does not exist')
 
     else:
         return render_template('login.html')
@@ -41,6 +42,7 @@ def logout():
     if request.cookies.get('logged_in') == 'yes':
         response = make_response(render_template('logout.html'))
         response.set_cookie('logged_in', '', expires=0)  # Set the cookie to expire immediately
+        response.set_cookie('username', '')
         return response
     else:
         response = make_response(render_template('login.html'))
@@ -69,8 +71,9 @@ def signup():
             new_player = Player(email=email, name=username, password=generate_password_hash(password, method='pbkdf2:sha256'))
             db.session.add(new_player)
             db.session.commit()
-            flash('Account created', category='success')
+
             response = make_response(render_template('success_login.html', user=username))    
             response.set_cookie('logged_in', 'yes')
+            response.set_cookie('username', username)
             return response
             

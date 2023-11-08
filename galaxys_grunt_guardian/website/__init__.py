@@ -22,11 +22,8 @@ def create_app():
     app.register_blueprint(games, url_prefix='/game/')
 
     from .models import Planet, Player, Game
-    # from .models import Player
 
     create_database(app)
-
-    
 
     return app
 

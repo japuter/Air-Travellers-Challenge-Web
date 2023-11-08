@@ -11,9 +11,13 @@ app = Flask(__name__, static_url_path='/static', static_folder='static')
 # 
 @games.route('/new-game', methods=['GET'])
 def new_game():
-    return '<h1>Created a new game</h1>'
-    pass
-
+    if request.cookies.get('logged_in') == 'yes':
+        username = request.cookies.get('username')
+        response = make_response(render_template('new-game.html', user=username))    
+        return response
+    else:
+        return make_response(url_for('auth.login'))
+        
 
 # Run the application if this script is executed
 if __name__ == '__main__':

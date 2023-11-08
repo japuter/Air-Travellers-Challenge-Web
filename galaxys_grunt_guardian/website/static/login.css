@@ -1,12 +1,26 @@
+body {
+  margin: 0;
+  padding: 0;
+  padding-left: 10%;
+  display: flex;
+  float: left;
+  height: 100vh;
+}
+
 .login-container {
   margin: auto;
   background-color: rgba(138, 43, 226, 0.5);
-  width: 50vh;
-  min-height: 50vh;
+  width: 80vh;
+  min-height: 65vh;
+  padding: 5%;
+  padding-top: 15%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
+.signup-wrapper {
+  padding-right: 5%;
+}
 
 .login-form {
   display: flex;
